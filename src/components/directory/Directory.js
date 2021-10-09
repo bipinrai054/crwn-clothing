@@ -5,7 +5,6 @@ import './Directory.scss';
 
 function Directory() {
   const [sections, setSections] = useState(data);
-  console.log(sections);
   return (
     <div className='  directory-menu'>
       {sections.map((section) => {
@@ -15,6 +14,7 @@ function Directory() {
             title={section.title}
             imageUrl={section.imageUrl}
             size={section.size}
+            linkUrl={section.linkUrl}
           />
         );
       })}
