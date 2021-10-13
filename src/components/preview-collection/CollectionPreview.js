@@ -9,15 +9,8 @@ function PreviewCollection({ title, items }) {
       <div className='preview'>
         {items
           .filter((item, idx) => idx < 4)
-          .map(({ id, name, price, imageUrl }) => {
-            return (
-              <CollectionItem
-                key={id}
-                name={name}
-                price={price}
-                imageUrl={imageUrl}
-              />
-            );
+          .map((item) => {
+            return <CollectionItem key={item.id} item={item} />;
           })}
       </div>
     </div>
