@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectDirectorySections } from '../../redux/directory/directorySelectors';
 import MenuItems from '../menu-items/MenuItems';
 import data from './data';
 import './Directory.scss';
@@ -21,4 +24,9 @@ function Directory() {
     </div>
   );
 }
-export default Directory;
+
+const mapStateToProps = createStructuredSelector({
+  sections: selectDirectorySections,
+});
+
+export default connect(mapStateToProps)(Directory);
